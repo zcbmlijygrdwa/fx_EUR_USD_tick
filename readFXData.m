@@ -1,6 +1,7 @@
 clear all;
 close all;
 
+addpath('../matlabplugins')
 
 yearIdx = 2015;
 monthIdx = 6;
@@ -63,7 +64,7 @@ mr2_arm_bs_diff = m_bs_diff+distrCut_arm*s_bs_diff;
 %processed2 = processed2*5+min(midRaw);
 %---------------------------------
 %close all
-ax1 = subplot(4,1,1)
+ax1 = subplot(4,1,1);
 plot(sellRaw);
 hold on
 plot(buyRaw);
@@ -72,7 +73,7 @@ plot(processed)
 hold off
 
 
-ax2 = subplot(4,1,2)
+ax2 = subplot(4,1,2);
 hold on
 plot(zeros(1,length(price_ma_diff)))
 plot(price_ma_diff)
@@ -81,7 +82,7 @@ plot(ones(1,length(price_ma_diff))*mr2_arm_price_ma_diff,'k')
 hold off
 title('price-MA diff')
 
-ax3 = subplot(4,1,3)
+ax3 = subplot(4,1,3);
 plot(bs_diff)
 hold on
 plot(ones(1,length(price_ma_diff))*ml2_arm_bs_diff,'k')
@@ -89,7 +90,7 @@ plot(ones(1,length(price_ma_diff))*mr2_arm_bs_diff,'k')
 hold off
 title('buy-sell diff')
 
-ax4 = subplot(4,1,4)
+ax4 = subplot(4,1,4);
 plot(midRaw_d50)
 hold on
 plot(ones(1,length(price_ma_diff))*ml2_arm_midRaw_d,'k')
@@ -99,4 +100,4 @@ title('buy-sell diff')
 title('price slop')
 
 
-linkaxes([ax1,ax2,ax3,ax4],'x')
+linkaxes([ax1,ax2,ax3,ax4],'x');
